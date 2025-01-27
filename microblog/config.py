@@ -17,4 +17,4 @@ class Config:
     ADMINS = ['nyambuismael@gmail.com']
 
     # Posts per page configuration
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 25
