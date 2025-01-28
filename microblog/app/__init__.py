@@ -6,6 +6,7 @@ from flask_login import LoginManager
 import logging
 import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
+from flask_mail import Mail
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -15,6 +16,8 @@ login.login_view = 'login' # Forces users to login before they can view certain 
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+mail = Mail(app)
 
 if not app.debug:
     # Sends logs to mail
