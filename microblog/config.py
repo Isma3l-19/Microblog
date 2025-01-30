@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret')
 
@@ -21,5 +22,5 @@ class Config:
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = [os.environ.get('ADMIN_EMAIL', 'default_admin@example.com')]
 
-oo    # Pagination configuration
+    # Pagination configuration
     POSTS_PER_PAGE = 25
