@@ -21,5 +21,5 @@ class Config:
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = [os.environ.get('ADMIN_EMAIL', 'default_admin@example.com')]
 
-    # Pagination configuration
+oo    # Pagination configuration
     POSTS_PER_PAGE = 25
