@@ -7,6 +7,7 @@ import logging
 import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_mail import Mail
+from flask_moment import Moment
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -18,6 +19,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 mail = Mail(app)
+
+# flask-moment instance
+moment = Moment(app)
 
 if not app.debug:
     # Sends logs to mail
