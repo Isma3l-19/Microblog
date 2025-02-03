@@ -10,3 +10,4 @@ aiosmtpd # Provides a fake email server that accepts emails but instead of sendi
 pyjwt
 python-dotenv
 flask-moment
+flask-babel

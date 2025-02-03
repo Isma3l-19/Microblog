@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -8,16 +8,29 @@ import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_mail import Mail
 from flask_moment import Moment
+from flask_babel import Babel, lazy_gettext as _l
+
+# Initialize Flask-Babel
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-login = LoginManager(app)
-login.login_view = 'login' # Forces users to login before they can view certain pages
-
+# Initializing the db
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+# Login instance
+login = LoginManager(app)
+login.login_view = 'login' # Forces users to login before they can view certain pages
+login.login_message = _l('Please log in to access this page.')
+
+# babel instance
+babel = Babel(app, locale_selector=get_locale)
+
+# mail instnce
 mail = Mail(app)
 
 # flask-moment instance

@@ -1,1 +1,7 @@
 .env
+instance/app.db
+logs/*
+__pycache__
+
+# Translations
+*.mo

@@ -24,3 +24,6 @@ class Config:
 
     # Pagination configuration
     POSTS_PER_PAGE = 25
+
+    # Supported languages list
+    LANGUAGES = ['en', 'es', 'sw']
