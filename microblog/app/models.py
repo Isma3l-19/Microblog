@@ -123,6 +123,7 @@ class Post(db.Model):
                                                 index=True)
 
     author: so.Mapped[User] = so.relationship(back_populates='posts')
+    language: so.Mapped[Optional[str]] = so.mapped_column(sa.String(5)) # Detects language to post model
 
     def __repr__(self):
         return f'<Post {self.body}>'

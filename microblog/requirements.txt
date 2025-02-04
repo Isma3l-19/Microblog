@@ -11,3 +11,4 @@ pyjwt
 python-dotenv
 flask-moment
 flask-babel
+langdetect # Library used to automatically detect different languages.

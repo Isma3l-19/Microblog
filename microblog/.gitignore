@@ -1,7 +1,14 @@
+# Environment variables
 .env
-instance/app.db
-logs/*
-__pycache__
 
-# Translations
+# Database
+instance/
+
+# Logs
+logs/
+
+# Python cache files
+__pycache__/
+
+# Compiled translations
 *.mo
